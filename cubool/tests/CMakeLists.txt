@@ -54,3 +54,15 @@ target_link_libraries(test_vector_vxm PUBLIC testing)
 
 add_executable(test_vector_sub_vector test_vector_sub_vector.cpp)
 target_link_libraries(test_vector_sub_vector PUBLIC testing)
+
+add_executable(dk6_test dk6_test.cpp)
+target_link_libraries(dk6_test PUBLIC testing)
+
+add_executable(inverted_test inverted_test.cpp)
+target_link_libraries(inverted_test PUBLIC testing)
+
+add_executable(apply_not_mask_test apply_not_mask_test.cpp)
+target_link_libraries(apply_not_mask_test PUBLIC testing)
+
+add_executable(dk6_test_ewisemult dk6_test_ewisemult.cpp)
+target_link_libraries(dk6_test_ewisemult PUBLIC testing)
