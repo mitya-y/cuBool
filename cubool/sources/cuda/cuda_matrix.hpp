@@ -61,6 +61,8 @@ namespace cubool {
         index getNcols() const override;
         index getNvals() const override;
 
+        static void test();
+
     private:
         friend class CudaVector;
 

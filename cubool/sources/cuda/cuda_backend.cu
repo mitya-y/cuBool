@@ -30,6 +30,11 @@
 
 #include <iostream>
 
+
+void cubool::CudaBackend::test() {
+    CudaMatrix::test();
+}
+
 namespace cubool {
 
     void CudaBackend::initialize(hints initHints) {

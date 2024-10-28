@@ -9,7 +9,7 @@ static void printTestingMatrix(const testing::Matrix &matrix, std::string name =
     }
 
     for (int i = 0; i < matrix.nvals; i++) {
-        printf("(%d, %d)\n", matrix.colsIndex[i], matrix.rowsIndex[i]);
+        printf("(%d, %d)\n", matrix.rowsIndex[i], matrix.colsIndex[i]);
     }
 }
 

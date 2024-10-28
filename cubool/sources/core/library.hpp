@@ -48,6 +48,8 @@ namespace cubool {
         static bool isBackedInitialized();
         static class Logger* getLogger();
 
+        static void test();
+
     private:
         static std::unordered_set<class Matrix*> mAllocMatrices;
         static std::unordered_set<class Vector*> mAllocVectors;

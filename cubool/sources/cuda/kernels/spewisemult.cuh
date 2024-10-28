@@ -97,14 +97,35 @@ namespace cubool {
                 fillIndices(a, inputA);
                 fillIndices(b, inputB);
 
+                inputA = ContainerType<LargeIndexType> {2, 7};
+                inputB = ContainerType<LargeIndexType> {1,2,3,4,5,6,7,8,9};
+
+                std::cout << "inputA, nvals = " << aNvals << std::endl;
+                for (int i = 0; i < aNvals; i++) {
+                    std::cout << *(inputA.begin() + i) << std::endl;
+                }
+                std::cout << "inputB, nvals = " << bNvals << std::endl;
+                for (int i = 0; i < bNvals; i++) {
+                    std::cout << *(inputB.begin() + i) << std::endl;
+                }
+
                 ContainerType<LargeIndexType> intersected(worst);
 
+                std::cout << "last err = " << cudaGetLastError() << std::endl;
                 auto out = thrust::set_intersection(inputA.begin(), inputA.end(),
                                                     inputB.begin(), inputB.end(),
                                                     intersected.begin());
+                std::cout << "last err = " << cudaGetLastError() << std::endl;
+
+                std::cout << "inter, nvals = " << intersected.size() << std::endl;
+                for (int i = 0; i < worst; i++) {
+                    std::cout << *(intersected.begin() + i) << std::endl;
+                }
 
                 // Count result nvals count
                 auto nvals = thrust::distance(intersected.begin(), out);
+
+                std::cout << "nvals = " << nvals << std::endl;
 
                 ContainerType<index> rowOffsetTmp(a.m_rows + 1);
                 ContainerType<index> colIndex(nvals);

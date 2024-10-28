@@ -33,6 +33,7 @@
 #include <utils/data_utils.hpp>
 #include <core/error.hpp>
 #include <cassert>
+#include <iostream>
 
 namespace cubool {
 
@@ -216,8 +217,12 @@ namespace cubool {
         auto a = dynamic_cast<const SqMatrix*>(&aBase);
         auto b = dynamic_cast<const SqMatrix*>(&bBase);
 
+        std::cout << "sqMatrix::before check\n";
+
         CHECK_RAISE_ERROR(a != nullptr, InvalidArgument, "Provided matrix does not belongs to sequential matrix class");
         CHECK_RAISE_ERROR(b != nullptr, InvalidArgument, "Provided matrix does not belongs to sequential matrix class");
+
+        std::cout << "sqMatrix::eWiseMult\n";
 
         assert(a->getNrows() == this->getNrows());
         assert(a->getNcols() == this->getNcols());

@@ -925,4 +925,6 @@ CUBOOL_EXPORT CUBOOL_API cuBool_Status cuBool_Kronecker(
     cuBool_Hints hints
 );
 
+void test();
+
 #endif //CUBOOL_CUBOOL_H

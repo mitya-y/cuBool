@@ -24,6 +24,11 @@
 
 #include <cuBool_Common.hpp>
 
+
+void test() {
+    cubool::Library::test();
+}
+
 cuBool_Status cuBool_Matrix_EWiseMult(
         cuBool_Matrix result,
         cuBool_Matrix left,

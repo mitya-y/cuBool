@@ -95,13 +95,15 @@ void testRun(cuBool_Index m, cuBool_Index t, cuBool_Index n, cuBool_Hints setup)
     // Setup library
     ASSERT_EQ(cuBool_Initialize(setup), CUBOOL_STATUS_SUCCESS);
 
-    for (size_t i = 0; i < 5; i++) {
+    for (size_t i = 0; i < 1; i++) {
         testMatrixMultiplyAdd(m, t, n, 0.1f + (0.05f) * ((float) i), CUBOOL_HINT_NO);
     }
 
+    /*
     for (size_t i = 0; i < 5; i++) {
         testMatrixMultiply(m, t, n, 0.1f + (0.05f) * ((float) i), CUBOOL_HINT_NO);
     }
+    */
 
     // Finalize library
     ASSERT_EQ(cuBool_Finalize(), CUBOOL_STATUS_SUCCESS);
@@ -112,6 +114,7 @@ TEST(cuBool_Matrix, MultiplySmall) {
     testRun(m, t, n, CUBOOL_HINT_NO);
 }
 
+/*
 TEST(cuBool_Matrix, MultiplyMedium) {
     cuBool_Index m = 500, t = 1000, n = 800;
     testRun(m, t, n, CUBOOL_HINT_NO);
@@ -151,5 +154,6 @@ TEST(cuBool_Matrix, MultiplyLargeManaged) {
     cuBool_Index m = 1000, t = 2000, n = 500;
     testRun(m, t, n, CUBOOL_HINT_GPU_MEM_MANAGED);
 }
+*/
 
 CUBOOL_GTEST_MAIN

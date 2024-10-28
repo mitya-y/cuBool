@@ -43,6 +43,11 @@
 #include <sequential/sq_backend.hpp>
 #endif
 
+
+void cubool::Library::test() {
+    CudaBackend::test();
+}
+
 namespace cubool {
 
     std::unordered_set<class Matrix*> Library::mAllocMatrices;

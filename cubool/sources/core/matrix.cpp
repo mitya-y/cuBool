@@ -28,6 +28,7 @@
 #include <io/logger.hpp>
 #include <utils/timer.hpp>
 #include <cassert>
+#include <iostream>
 
 #define TIMER_ACTION(timer, action)              \
     Timer timer;                                 \
@@ -327,6 +328,8 @@ namespace cubool {
 
         CHECK_RAISE_ERROR(M == this->getNrows(), InvalidArgument, "Matrix has incompatible size for operation result");
         CHECK_RAISE_ERROR(N == this->getNcols(), InvalidArgument, "Matrix has incompatible size for operation result");
+
+        std::cout << "Matrix::eWiseMult\n";
 
         a->commitCache();
         b->commitCache();

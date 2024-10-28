@@ -49,6 +49,8 @@ namespace cubool {
 
         CudaInstance& getInstance();
 
+        static void test();
+
     private:
         CudaInstance* mInstance;
         size_t mMatCount = 0;
